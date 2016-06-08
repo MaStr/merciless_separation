@@ -1,0 +1,63 @@
+#      A URL to be displayed in the error page that users will see if
+#      access to an untrusted page is denied.
+#trust-info-url  http://www.example.com/why_we_block.html
+#admin-address privoxy-admin@example.com
+
+#      A URL to documentation about the local Privoxy setup,
+#      configuration or policies.
+#proxy-info-url http://www.example.com/proxy-service.html
+
+confdir /opt/privoxy
+
+
+# Error Page templates
+templdir /opt/privoxy/templates
+
+## Work folders
+#temporary-directory /opt/privoxy/temp
+temporary-directory /opt/privoxy/temp
+logdir /opt/privoxy/log
+## Comment for disabling
+logfile logfile
+#debug 1030
+debug 1024
+
+
+## Actions
+actionsfile match-all.action # Actions that are applied to all sites and maybe overruled later on.
+actionsfile default.action   # Main actions file
+actionsfile user.action      # User customizations
+
+
+## 
+filterfile default.filter
+filterfile user.filter      # User customizations
+
+## Whitelist
+trustfile whitelist.txt
+enforce-blocks 1
+
+## Server Runtime Options
+listen-address 0.0.0.0:8118
+
+## Forward to a 2nd proxy?
+# forward target_pattern http_parent[:port]
+# forward :80   127.0.0.1:13128
+
+## Edit actions for LAB
+enable-edit-actions 1
+
+
+## Caching options
+# 4MB is default , lets take 10
+buffer-limit 40960
+
+## TCP Stuff
+keep-alive-timeout 5
+default-server-timeout 60
+connection-sharing 0
+socket-timeout 120
+# 128 default
+max-client-connections 256 
+
+

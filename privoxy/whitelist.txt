@@ -1,0 +1,13 @@
+# Wired stuff
+~*.wired.com/
+~*.cloudfront.net
+*.cnevids.com
+
+# BBC
+~*.bbc.com
+~*.bbci.co.uk/
+~*.bbc.co.uk
+~*.files.bbci.co.uk
+~static.bbc.co.uk
+~*.live.bbc.co.uk
+~
