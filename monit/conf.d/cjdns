@@ -1,0 +1,4 @@
+check process cjdns with pidfile /var/run//cjdns.pid
+	  start program  "/opt/merciless_separation/bin/start_cjdns.sh"
+	  stop program  "/bin/bash -c '/bin/kill `/bin/cat  /var/run/cjdns.pid`'"
+	  if 5 restarts within 5 cycles then alert

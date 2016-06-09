@@ -16,7 +16,7 @@ git_url="https://github.com/MaStr/merciless_separation.git"
 git_path="/opt/merciless_separation"
 
 #task_list="openvpn squid3 perl-proxy"
-task_list="openvpn perl-proxy"
+task_list="openvpn privoxy"
 
 work_tag=""
 
@@ -148,6 +148,11 @@ start_vote_wait(){
     return 0
 }
 
+fs_sync(){
+
+    echo ""
+}
+
 
 while getopts ":hiIDd:g:u:e:" opt; do
     case $opt in
@@ -197,6 +202,9 @@ for task in $task_list ; do
 done
 
 git checkout "${work_tag}"
+
+fs_sync
+
 
 if [ $MAXWAIT_STEPS -eq 0 ] ; then
     echo "Waiting 2 seconds to prevent overlapping monit actions"
