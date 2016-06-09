@@ -20,6 +20,8 @@ task_list="openvpn privoxy"
 
 work_tag=""
 
+privoxy_user="privoxy"
+
 debug(){
    set -x
    if [ "$debug" -eq "1" ] ; then
@@ -113,7 +115,10 @@ start_vote(){
     check_status "$task"
     if [ $monit_status -ge 11 ] && [ $monit_status -lt 99 ]  ; then
        echo "Issue Monit start for $task"
-       monit start "$task"
+       if ! monit start "$task" ; then
+            sleep 10
+            monit start "$task"
+       fi
     elif [ $monit_status -eq 99 ] ; then
         echo "ERROR: it seems there is an issue with the task configuration of : $task"
         exit 10
@@ -150,7 +155,11 @@ start_vote_wait(){
 
 fs_sync(){
 
-    echo ""
+    echo "Fixing monit permissions"
+    chmod -R 0700 "${git_path}/monit"
+
+    echo "Fixing privoxy user permissions"
+    chown -R privoxy "${git_path}/privoxy"
 }
 
 
