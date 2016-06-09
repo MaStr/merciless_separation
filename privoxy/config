@@ -7,16 +7,16 @@
 #      configuration or policies.
 #proxy-info-url http://www.example.com/proxy-service.html
 
-confdir /opt/privoxy
+confdir /opt/merciless_separation/privoxy
 
 
 # Error Page templates
-templdir /opt/privoxy/templates
+templdir /opt/merciless_separation/privoxy/templates
 
 ## Work folders
 #temporary-directory /opt/privoxy/temp
-temporary-directory /opt/privoxy/temp
-logdir /opt/privoxy/log
+temporary-directory /opt/merciless_separation/privoxy/temp
+logdir /opt/merciless_separation/privoxy/log
 ## Comment for disabling
 logfile logfile
 #debug 1030
