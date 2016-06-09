@@ -1,6 +1,6 @@
 check process privoxy with pidfile /var/run/privoxy.pid
-   start program = "/etc/init.d/privoxy start"
-   stop  program = "/etc/init.d/privoxy stop"
+   start program = "/opt/merciless_separation/bin/start_intervention.sh"
+   stop  program = "/opt/merciless_separation/bin/stop_intervention.sh"
     if 5 restarts within 5 cycles then alert
 
     if failed host 127.0.0.1 port 8118 then restart
