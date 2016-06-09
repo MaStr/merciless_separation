@@ -210,6 +210,8 @@ for task in $task_list ; do
     stop_vote_wait $task
 done
 
+git checkout -f ${env_runmode} 
+git pull
 git checkout "${work_tag}"
 
 fs_sync
