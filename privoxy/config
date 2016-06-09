@@ -39,6 +39,7 @@ enforce-blocks 1
 
 ## Server Runtime Options
 listen-address 0.0.0.0:8118
+accept-intercepted-requests 1 
 
 ## Forward to a 2nd proxy?
 # forward target_pattern http_parent[:port]
