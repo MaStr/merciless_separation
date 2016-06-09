@@ -23,7 +23,6 @@ work_tag=""
 privoxy_user="privoxy"
 
 debug(){
-   set -x
    if [ "$debug" -eq "1" ] ; then
         echo "DEBUG: " $@
    fi
