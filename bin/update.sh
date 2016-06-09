@@ -115,7 +115,10 @@ start_vote(){
     check_status "$task"
     if [ $monit_status -ge 11 ] && [ $monit_status -lt 99 ]  ; then
        echo "Issue Monit start for $task"
-       monit start "$task"
+       if ! monit start "$task" ; then
+            sleep 10
+            monit start "$task"
+       fi
     elif [ $monit_status -eq 99 ] ; then
         echo "ERROR: it seems there is an issue with the task configuration of : $task"
         exit 10
