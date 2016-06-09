@@ -20,6 +20,8 @@ task_list="openvpn privoxy"
 
 work_tag=""
 
+privoxy_user="privoxy"
+
 debug(){
    set -x
    if [ "$debug" -eq "1" ] ; then
@@ -150,7 +152,11 @@ start_vote_wait(){
 
 fs_sync(){
 
-    echo ""
+    echo "Fixing monit permissions"
+    chmod -R 0700 "${git_path}/monit"
+
+    echo "Fixing privoxy user permissions"
+    chown -R privoxy "${git_path}/privoxy"
 }
 
 
