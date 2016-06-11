@@ -4,6 +4,8 @@
 set -e 
 set -o pipefail
 
+export GIT_PAGER=cat
+
 MAXWAIT_STEPS=62
 SLEEP_TIME=2
 
@@ -226,9 +228,9 @@ if [ $run_monit -eq 1 ] ; then
     done
 fi
 
-git checkout -f ${env_runmode} 
-git pull
-git checkout "${work_tag}"
+git checkout -f ${env_runmode} 2>&1 
+git pull 2>&1
+git checkout "${work_tag}" 2>&1
 
 fs_sync
 
