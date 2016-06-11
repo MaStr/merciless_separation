@@ -44,6 +44,16 @@ usage_help(){
     -e : environment 'lab|live...'
 
     -G : Run only actions again git (useful for initial setup)
+
+
+    Exits with following codes:
+    
+         0 :  Update processed, everything ok
+         1 :  nothing to do
+         2 :  Help message printed
+        10 :  Monit issues with tasks 
+        11 :  Monit Task Timeout
+
     "
     exit 2
 }
@@ -207,7 +217,7 @@ if git tag | grep -q -e "${work_tag}" ; then
 
 else
     debug "Nothing to do for today"
-    exit 0
+    exit 1
 fi
 
 if [ $run_monit -eq 1 ] ; then
