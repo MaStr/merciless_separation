@@ -12,7 +12,7 @@ EMAIL="kurvenjunkie@gmail.com"
 #   This should prevent that multiple disconnects can occur.
 #   And that the VPN connection is not sticky to the first in update
 #   order.
-SLEEP_TIME=$(( 5 * 60 ))
+SLEEP_TIME=$(( 5  ))
 
 # Logfile 
 #  Take a protocol of the runtime, which should be sent over to $EMAIL
