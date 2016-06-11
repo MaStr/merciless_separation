@@ -4,6 +4,8 @@
 set -e 
 set -o pipefail
 
+export GIT_PAGER=cat
+
 MAXWAIT_STEPS=62
 SLEEP_TIME=2
 
@@ -11,6 +13,7 @@ env_runmode="unset"
 rundate=$( date +"%Y-%m-%d" )
 debug=0
 ignore_wait_timeout_error=0
+run_monit=1
 
 git_url="https://github.com/MaStr/merciless_separation.git"
 git_path="/opt/merciless_separation"
@@ -41,6 +44,18 @@ usage_help(){
     -u : git repository url
 
     -e : environment 'lab|live...'
+
+    -G : Run only actions again git (useful for initial setup)
+
+
+    Exits with following codes:
+    
+         0 :  Update processed, everything ok
+         1 :  nothing to do
+         2 :  Help message printed
+        10 :  Monit issues with tasks 
+        11 :  Monit Task Timeout
+
     "
     exit 2
 }
@@ -162,7 +177,7 @@ fs_sync(){
 }
 
 
-while getopts ":hiIDd:g:u:e:" opt; do
+while getopts ":hiIGDd:g:u:e:" opt; do
     case $opt in
         h)  usage_help
             ;;
@@ -181,6 +196,8 @@ while getopts ":hiIDd:g:u:e:" opt; do
         u)  git_url="$OPTARG"
             ;;
         e)   env_runmode="$OPTARG"
+            ;;
+        G)  run_monit=0
             ;;
         \?)  usage_help
      esac
@@ -202,16 +219,18 @@ if git tag | grep -q -e "${work_tag}" ; then
 
 else
     debug "Nothing to do for today"
-    exit 0
+    exit 1
 fi
 
-for task in $task_list ; do
-    stop_vote_wait $task
-done
+if [ $run_monit -eq 1 ] ; then
+    for task in $task_list ; do
+        stop_vote_wait $task
+    done
+fi
 
-git checkout -f ${env_runmode} 
-git pull
-git checkout "${work_tag}"
+git checkout -f ${env_runmode} 2>&1 
+git pull 2>&1
+git checkout "${work_tag}" 2>&1
 
 fs_sync
 
@@ -221,9 +240,10 @@ if [ $MAXWAIT_STEPS -eq 0 ] ; then
     sleep 2
 fi
 
-#for task in "perl_proxy squid3 openvpn"; do
-reverse_list=$( echo $task_list | sed 's/ /\n/g' | tac | sed ':a;$!{N;ba};s/\n/ /g')
-for task in  $reverse_list  ; do 
-    start_vote_wait "$task"
-done
-
+if [ $run_monit -eq 1 ] ; then
+    #for task in "perl_proxy squid3 openvpn"; do
+    reverse_list=$( echo $task_list | sed 's/ /\n/g' | tac | sed ':a;$!{N;ba};s/\n/ /g')
+    for task in  $reverse_list  ; do 
+        start_vote_wait "$task"
+    done
+fi 
