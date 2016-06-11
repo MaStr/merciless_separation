@@ -45,12 +45,12 @@ accept-intercepted-requests 1
 # forward target_pattern http_parent[:port]
 # forward :80   127.0.0.1:13128
 
-## Edit actions for LAB
-enable-edit-actions 1
+## Edit actions online
+enable-edit-actions 0
 
 
 ## Caching options
-# 4MB is default , lets take 10
+# 4MB is default , lets take x40
 buffer-limit 40960
 
 ## TCP Stuff
