@@ -79,9 +79,8 @@
 FILTER: gender He / She replacement
 s/[ >](he)([ \&\,\.\-\'\’])/ she$2/g
 s/[ >](He)([ \&\,\.\-\'\’])/ She$2/g
-s/ him/ her/g
-s/ his / hers /g
-
+s/[ >]([Hh])im/ $1er/g
+s/[ >]([Hh])his / $1ers /g
 
 EXTERNAL-FILTER: fs_dump Dump stuff into a file
 /usr/bin/tee -a dump.file
