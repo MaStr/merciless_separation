@@ -30,7 +30,9 @@ send_mail(){
 test -e $log && rm $log
 echo "Running update script on " $( hostname ) $( date ) > $log
 
-if [ "$connections" = "0" ] ; then 
+if [ "$connections" = "0" ] ; then
+    echo "Found no active VPN connection." >> $log
+else 
     echo "Found active connections: $connections" >>  $log
     echo " Sleeping for $SLEEP_TIME " >>  $log
     sleep $SLEEP_TIME
@@ -38,7 +40,7 @@ fi
 
 cd /opt/merciless_separation/
 
-bin/update.sh -e "$environment" &>> $log
+bin/update.sh -e "$environment"  2>&1  >> $log
 RC=$?
 
 case $RC in
