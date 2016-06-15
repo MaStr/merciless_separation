@@ -70,7 +70,7 @@ monit_status=0
 check_status(){
     local task="$1"
 
-    local str_status=$( monit summary $task | grep Process | awk '{print $3$4}')
+    local str_status=$( monit summary | grep $task | grep Process | awk '{print $3$4}')
 
     case $str_status in
         "") monit_status=99 && return 0
@@ -246,4 +246,6 @@ if [ $run_monit -eq 1 ] ; then
     for task in  $reverse_list  ; do 
         start_vote_wait "$task"
     done
-fi 
+fi
+
+echo "Done"
