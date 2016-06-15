@@ -19,5 +19,6 @@ exchange_folder(){
 
 exchange_folder "/etc/privoxy" "${GIT_URL}/privoxy"
 exchange_folder "/etc/monit" "${GIT_URL}/monit"
+exchange_folder "/etc/lighttpd" "${GIT_URL}/lighttpd"
 
 
