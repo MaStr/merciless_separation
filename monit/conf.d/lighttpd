@@ -1,0 +1,6 @@
+check process lighttpd with pidfile /var/run/lighttpd.pid
+   start program = "/etc/init.d/lighttpd start"
+   stop  program = "/etc/init.d/lighttpd stop"
+    if 5 restarts within 5 cycles then alert
+
+    if failed host 127.0.0.1 port 80 protocol http then restart
