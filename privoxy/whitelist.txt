@@ -4,6 +4,7 @@
 *.cnevids.com
 
 # BBC
+~bbc.co.uk
 ~*.bbc.com
 ~*.bbci.co.uk/
 ~*.bbc.co.uk
