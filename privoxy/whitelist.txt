@@ -1,3 +1,7 @@
+## Captive Portal check for android
+#~connectivitycheck.android.com
+#~*/generate_204
+
 # Wired stuff
 ~*.wired.com/
 ~*.cloudfront.net
