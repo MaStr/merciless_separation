@@ -77,10 +77,20 @@
 
 ## Merciless filters
 FILTER: gender He / She replacement
-s/[ >](he)([ \&\,\.\-\'\’])/ she$2/g
-s/[ >](He)([ \&\,\.\-\'\’])/ She$2/g
-s/[ >]([Hh])im/ $1er/g
-s/[ >]([Hh])his / $1ers /g
+/([ >])(he)([ \&\,\.\-\'\’])/$1shyyyyyyyyyyye$3/g
+s/([ >])(He)([ \&\,\.\-\'\’])/$1Shyyyyyyyyyyye$3/g
+s/([ >])([Hh])im/$1$2yyyyyyyyyyyer/g
+s/([ >])([Hh])is/$1$2yyyyyyyyyyyer/g
+s/([ >])(she)([ \&\,\.\-\'\’])/$1hxxxxxxxxxxe$3/g
+s/([ >])(She)([ \&\,\.\-\'\’])/$1Hxxxxxxxxxxe$3/g
+s/([ >])([Hh])er /$1$2xxxxxxxxxxis /g
+s/([ >])([Hh])er/$1$2xxxxxxxxxxim/g
+s/Mr([\. ]) /Myyyyyyyyyyys$1/g
+s/Mrs([\. ]) /Mxxxxxxxxxxr$1/g
+s/yyyyyyyyyyy//g
+s/xxxxxxxxxx//g
+
+
 
 EXTERNAL-FILTER: fs_dump Dump stuff into a file
 /usr/bin/tee -a dump.file
