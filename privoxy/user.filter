@@ -97,3 +97,7 @@ s|</head>|<style>img{transform: rotate(180deg);}</style></head>|gisU
 EXTERNAL-FILTER: fs_dump Dump stuff into a file
 /usr/bin/tee -a dump.file
 
+
+FILTER: noHTTPS Kill HTTPS gets
+s/https/http/gi
+
