@@ -60,7 +60,7 @@
 include /etc/monit/mailserver.secret 
 
 set mail-format { from: monit@proxy1.lab.aod-rpg.de }
-set alert kurvenjunkie@gmail.com
+set alert kurvenjunkie@gmail.com not on { instance, action } 
 #
 #
 #
