@@ -1,4 +1,5 @@
-## Captive Portal check for android
+#
+# Captive Portal check for android
 #~connectivitycheck.android.com
 #~*/generate_204
 
@@ -9,6 +10,7 @@
 
 # BBC
 ~bbc.co.uk
+~bbc.com
 ~*.bbc.com
 ~*.bbci.co.uk/
 ~*.bbc.co.uk
@@ -21,4 +23,39 @@
 +merciless.wtf.im
 
 
-~
+## nu.nl and related
+~nu.nl
+~*.nu.nl
+
+## Volkskrant and related
+~volkskrant.nl
+~*.volkskrant.nl
+~static*.persgroep.net
+
+## Telegraaf and related
+~*.telegraaf.nl
+~telegraaf.nl
+~*.tcdn.nl
+
+## geenstijl.nl
+~*.geenstijl.nl
+~geenstijl.nl
+~kudtkoekiewet.nl/
+~gscdn.nl/
+~*.gscdn.nl
+
+## Guardian
+~*.theguardian.com
+~theguardian.com
+~*.guim.co.uk
+
+## Wikipedia , but mostly https :-(
+~wikipedia.*
+~*.wikipedia.*
+~wikimedia.*
+~*.wikimedia.*
+
+##UnHTTPS google
++45.79.148.194
+~www.gstatic.com
+~www.google.com/textinputassistant/tia.png
