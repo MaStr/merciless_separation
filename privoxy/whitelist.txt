@@ -26,6 +26,13 @@
 ## nu.nl and related
 ~nu.nl
 ~*.nu.nl
+~*.*.nu.nl
+~*.kijk.nl
+~*.snmmd.nl
+~*.2mdn.net
+~nl.sitestat.com/
+~*.cdn.sbsnet.nl
+~*.zie.nl
 
 ## Volkskrant and related
 ~volkskrant.nl
@@ -59,3 +66,8 @@
 +45.79.148.194
 ~www.gstatic.com
 ~www.google.com/textinputassistant/tia.png
+
+## other common stuff
+~code.jquery.com
+~*.googleapis.com
+~fonts.gstatic.com
