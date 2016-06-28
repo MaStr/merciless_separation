@@ -1,2 +1,3 @@
 *.secret
 privoxy/log/logfile
+privoxy/config.local
