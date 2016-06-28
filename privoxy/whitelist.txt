@@ -71,3 +71,4 @@
 ~code.jquery.com
 ~*.googleapis.com
 ~fonts.gstatic.com
+~suggestqueries.google.com
