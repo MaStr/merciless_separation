@@ -20,7 +20,9 @@ logdir /opt/merciless_separation/privoxy/log
 ## Comment for disabling
 logfile logfile
 #debug 1030
-debug 1024
+#debug 1024
+debug 0
+
 
 
 ## Actions
