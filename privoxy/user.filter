@@ -77,18 +77,34 @@
 
 ## Merciless filters
 FILTER: gender He / She replacement
-/([ >])(he)([ \&\,\.\-\'\’])/$1shyyyyyyyyyyye$3/g
-s/([ >])(He)([ \&\,\.\-\'\’])/$1Shyyyyyyyyyyye$3/g
+s/([ >])(he)([< \&\,\.\-\'\’])/$1shyyyyyyyyyyye$3/g
+s/([ >])(He)([< \&\,\.\-\'\’])/$1Shyyyyyyyyyyye$3/g
 s/([ >])([Hh])im/$1$2yyyyyyyyyyyer/g
 s/([ >])([Hh])is/$1$2yyyyyyyyyyyer/g
-s/([ >])(she)([ \&\,\.\-\'\’])/$1hxxxxxxxxxxe$3/g
-s/([ >])(She)([ \&\,\.\-\'\’])/$1Hxxxxxxxxxxe$3/g
+s/([ >])(she)([< \&\,\.\-\'\’])/$1hxxxxxxxxxxe$3/g
+s/([ >])(She)([< \&\,\.\-\'\’])/$1Hxxxxxxxxxxe$3/g
 s/([ >])([Hh])er /$1$2xxxxxxxxxxis /g
 s/([ >])([Hh])er/$1$2xxxxxxxxxxim/g
-s/Mr([\. ]) /Myyyyyyyyyyys$1/g
-s/Mrs([\. ]) /Mxxxxxxxxxxr$1/g
+s/Mr([\. ])/Myyyyyyyyyyys$1/g
+s/Mrs([\. ])/Mxxxxxxxxxxr$1/g
 s/yyyyyyyyyyy//g
 s/xxxxxxxxxx//g
+
+
+FILTER: gender-nl  he / she replacements nl
+s/([ >])(hij)([< \&\,\.\-\'\’])/$1ziyyyyyyyyyyyj$3/g
+s/([ >])(Hij)([< \&\,\.\-\'\’])/$1Ziyyyyyyyyyyyj$3/g
+s/([ >])([Hh])em/$1$2aayyyyyyyyyyyr/g
+s/([ >])(zijn)([< \&\,\.\-\'\’])/$1haaxxxxxxxxxxr$3/g
+s/([ >])(Zijn)([< \&\,\.\-\'\’])/$1Haaxxxxxxxxxxr$3/g
+s/([ >])(z\'n)([< \&\,\.\-\'\’])/$1d\'xxxxxxxxxxr$3/g
+s/([ >])(d\'r)([< \&\,\.\-\'\’])/$1z\'xxxxxxxxxxn$3/g
+s/([ >])(zij)([< \&\,\.\-\'\’])/$1hixxxxxxxxxxj$3/g
+s/([ >])(Zij)([< \&\,\.\-\'\’])/$1Hixxxxxxxxxxj$3/g
+s/([ >])([Hh])aar/$1$2eyyyyyyyyyyym/g
+s/yyyyyyyyyyy//g
+s/xxxxxxxxxx//g
+
 
 FILTER: rot rotate image
 s|</head>|<style>img{transform: rotate(180deg);}</style></head>|gisU
@@ -100,4 +116,81 @@ EXTERNAL-FILTER: fs_dump Dump stuff into a file
 
 FILTER: noHTTPS Kill HTTPS gets
 s/https/http/gi
+
+FILTER: chapter1-set  First set of additional Word exchanges
+s/([ >])(ja)([< \&\,\.\-\'\’])/$1nexxxxxxxxxxe$3/g
+s/([ >])(Ja)([< \&\,\.\-\'\’])/$1Nexxxxxxxxxxe$3/g
+s/([ >])(nee)([< \&\,\.\-\'\’])/$1nxxxxxxxxxxa$3/g
+s/([ >])(Nee)([< \&\,\.\-\'\’])/$1Jxxxxxxxxxxa$3/g
+s/([ >])(zeker)([< \&\,\.\-\'\’])/$1ofzxxxxxxxxxxo$3/g
+s/([ >])(Zeker)([< \&\,\.\-\'\’])/$1Ofzxxxxxxxxxxo$3/g
+s/([ >])(waarschijnlijk)([< \&\,\.\-\'\’])/$1misschiexxxxxxxxxxn$3/g
+s/([ >])(Waarschijnlijk)([< \&\,\.\-\'\’])/$1Misschiexxxxxxxxxxn$3/g
+s/([ >])(in)([< \&\,\.\-\'\’])/$1uixxxxxxxxxxt$3/g
+s/([ >])(In)([< \&\,\.\-\'\’])/$1Uixxxxxxxxxxt$3/g
+s/([ >])(uit)([< \&\,\.\-\'\’])/$1ixxxxxxxxxxn$3/g
+s/([ >])(Uit)([< \&\,\.\-\'\’])/$1Ixxxxxxxxxxn$3/g
+s/([ >])(no)([< \&\,\.\-\'\’])/$1yexxxxxxxxxxs$3/g
+s/([ >])(No)([< \&\,\.\-\'\’])/$1Yexxxxxxxxxxs$3/g
+s/([ >])(yes)([< \&\,\.\-\'\’])/$1nxxxxxxxxxxo$3/g
+s/([ >])(Yes)([< \&\,\.\-\'\’])/$1Nxxxxxxxxxxo$3/g
+s/([ >])([sS])oon([< \&\,\.\-\'\’])/$1$2ooxxxxxxxxxxnish$3/g
+s/([ >])(money)([< \&\,\.\-\'\’])/$1spooxxxxxxxxxxn$3/g
+s/([ >])(Money)([< \&\,\.\-\'\’])/$1Spooxxxxxxxxxxn$3/g
+s/([ >])(likely)([< \&\,\.\-\'\’])/$1propablxxxxxxxxxxy not$3/g
+s/([ >])(Likely)([< \&\,\.\-\'\’])/$1Propablxxxxxxxxxxy not$3/g
+s/xxxxxxxxxx//ig
+
+
+
+
+FILTER: chapter2-set 2nd Set of word exchanges
+s/([ >])(Europe)([< \&\,\.\-\'\’])/$1The whole euxxxxxxxxxxro thing$3/g
+s/([ >])(Europa)([< \&\,\.\-\'\’])/$1Europxxxxxxxxxxaa$3/g
+s/([ >])(Euro)([< \&\,\.\-\'\’])/$1Bitxxxxxxxxxxcoin$3/g
+s/([ >])(Pound)([< \&\,\.\-\'\’])/$1Bitxxxxxxxxxxcoin$3/g
+s/([ >])(in)([< \&\,\.\-\'\’])/$1ouxxxxxxxxxxt$3/g
+s/([ >])(In)([< \&\,\.\-\'\’])/$1Ouxxxxxxxxxxt$3/g
+s/([ >])(out)([< \&\,\.\-\'\’])/$1ixxxxxxxxxxn$3/g
+s/([ >])(Out)([< \&\,\.\-\'\’])/$1Ixxxxxxxxxxn$3/g
+s/([ >])(Trump)([< \&\,\.\-\'\’])/$1Truxxxxxxxxxxmperdrumpf$3/g
+s/([ >])(Erdogan)([< \&\,\.\-\'\’])/$1Herr Erdoxxxxxxxxxxgant$3/g
+s/([ >])(Snowden)([< \&\,\.\-\'\’])/$1snowglobe hero gxxxxxxxxxxuy$3/g
+s/([ >])(Equador)([< \&\,\.\-\'\’])/$1the country with a room in Londxxxxxxxxxxon$3/g
+s/([ >])(Assange)([< \&\,\.\-\'\’])/$1The wikileaksxxxxxxxxxx guy$3/g
+s/([ >])(Brexit)([< \&\,\.\-\'\’])/$1See ExxxxxxxxxxU later!$3/g
+s/([ >])(camping)([< \&\,\.\-\'\’])/$1fucking xxxxxxxxxxin tents$3/g
+s/([ >])(Camping)([< \&\,\.\-\'\’])/$1Fucking xxxxxxxxxxin tents$3/g
+s/([ >])([eE]lection)([< \&\,\.\-\'\’])/$1$2rectxxxxxxxxxxion$3/g
+s/([ >])(verkiezingen)([< \&\,\.\-\'\’])/$1stemmingxxxxxxxxxxmakerij$3/g
+s/([ >])(Verkiezingen)([< \&\,\.\-\'\’])/$1Stemmingxxxxxxxxxxmakerij$3/g
+s/([\- >])(referendum)([< \&\,\.\-\'\’])/$1xxxxxxxxxx$3/g
+s/([ >])(poetin)([< \&\,\.\-\'\’])/$1confusion xxxxxxxxxxking$3/g
+s/([ >])(Poetin)([< \&\,\.\-\'\’])/$1Confusion xxxxxxxxxxking$3/g
+s/([ >])(fun)([< \&\,\.\-\'\’])/$1luxxxxxxxxxxlz$3/g
+s/([ >])(Fun)([< \&\,\.\-\'\’])/$1Luxxxxxxxxxxlz$3/g
+s/([ >])(capitalizm)([< \&\,\.\-\'\’])/$1hyper capitalxxxxxxxxxxism$3/g
+s/([ >])(Capitalizm)([< \&\,\.\-\'\’])/$1Hyper capitalxxxxxxxxxxism$3/g
+s/([ >])(minutes)([< \&\,\.\-\'\’])/$1yeaxxxxxxxxxxrs$3/g
+s/([ >])(Minutes)([< \&\,\.\-\'\’])/$1Yeaxxxxxxxxxxrs$3/g
+s/([ >])(years)([< \&\,\.\-\'\’])/$1minutexxxxxxxxxxs$3/g
+s/([ >])(Years)([< \&\,\.\-\'\’])/$1Minutexxxxxxxxxxs$3/g
+s/([ >])(minuten)([< \&\,\.\-\'\’])/$1jaxxxxxxxxxxren$3/g
+s/([ >])(Minuten)([< \&\,\.\-\'\’])/$1Jaxxxxxxxxxxren$3/g
+s/([ >])(electric cars)([< \&\,\.\-\'\’])/$1atomic cxxxxxxxxxxats$3/g
+s/([ >])(Electric cars)([< \&\,\.\-\'\’])/$1Atomic cxxxxxxxxxxats$3/g
+s/([ >])(Tesla)([< \&\,\.\-\'\’])/$1Edixxxxxxxxxxson$3/g
+s/([ >])(Edison)([< \&\,\.\-\'\’])/$1Tesxxxxxxxxxxla$3/g
+s/([ >])(Cameron)([< \&\,\.\-\'\’])/$1Cameraxxxxxxxxxxtron$3/g
+s/([ >])(Boris Johnson)([< \&\,\.\-\'\’])/$1Straw xxxxxxxxxxman$3/g
+s/([ >])(left)([< \&\,\.\-\'\’])/$1rigxxxxxxxxxxht$3/g
+s/([ >])(Left)([< \&\,\.\-\'\’])/$1Rigxxxxxxxxxxht$3/g
+s/([ >])(right)([< \&\,\.\-\'\’])/$1lexxxxxxxxxxft$3/g
+s/([ >])(Right)([< \&\,\.\-\'\’])/$1Lexxxxxxxxxxft$3/g
+s/([ >])(links)([< \&\,\.\-\'\’])/$1rexxxxxxxxxxchts$3/g
+s/([ >])(Links)([< \&\,\.\-\'\’])/$1Rexxxxxxxxxxchts$3/g
+s/([ >])(rechts)([< \&\,\.\-\'\’])/$1lixxxxxxxxxxnks$3/g
+s/([ >])(Rechts)([< \&\,\.\-\'\’])/$1Lixxxxxxxxxxnks$3/g
+s/xxxxxxxxxx//g
+
 
