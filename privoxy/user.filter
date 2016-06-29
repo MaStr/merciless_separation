@@ -85,6 +85,18 @@ s/([ >])(she)([< \&\,\.\-\'\’])/$1hxxxxxxxxxxe$3/g
 s/([ >])(She)([< \&\,\.\-\'\’])/$1Hxxxxxxxxxxe$3/g
 s/([ >])([Hh])er /$1$2xxxxxxxxxxis /g
 s/([ >])([Hh])er/$1$2xxxxxxxxxxim/g
+s/([ >])([Mm])ister([< \&\,\.\-\'\’])/$1$2ixxxxxxxxxxss$3/g
+s/([ >])([Mm])iss([< \&\,\.\-\'\’])/$1$2istxxxxxxxxxxer$3/g
+s/([ >])([Ll])ord([< \&\,\.\-\'\’])/$1$2adxxxxxxxxxxy$3/g
+s/([ >])([Ll])ady([< \&\,\.\-\'\’])/$1$2orxxxxxxxxxxd$3/g
+s/([ >])(sir)([< \&\,\.\-\'\’])/$1ladxxxxxxxxxxy$3/g
+s/([ >])(Sir)([< \&\,\.\-\'\’])/$1Ladxxxxxxxxxxy$3/g
+s/([ >])(lady)([< \&\,\.\-\'\’])/$1sixxxxxxxxxxr$3/g
+s/([ >])(Lady)([< \&\,\.\-\'\’])/$1Sixxxxxxxxxxr$3/g
+s/([ >])(king)([< \&\,\.\-\'\’])/$1quxxxxxxxxxxeen$3/g
+s/([ >])(King)([< \&\,\.\-\'\’])/$1Quxxxxxxxxxxeen$3/g
+s/([ >])(queen)([< \&\,\.\-\'\’])/$1kixxxxxxxxxxng$3/g
+s/([ >])(Queen)([< \&\,\.\-\'\’])/$1Kixxxxxxxxxxng$3/g
 s/Mr([\. ])/Myyyyyyyyyyys$1/g
 s/Mrs([\. ])/Mxxxxxxxxxxr$1/g
 s/yyyyyyyyyyy//g
@@ -102,6 +114,8 @@ s/([ >])(d\'r)([< \&\,\.\-\'\’])/$1z\'xxxxxxxxxxn$3/g
 s/([ >])(zij)([< \&\,\.\-\'\’])/$1hixxxxxxxxxxj$3/g
 s/([ >])(Zij)([< \&\,\.\-\'\’])/$1Hixxxxxxxxxxj$3/g
 s/([ >])([Hh])aar/$1$2eyyyyyyyyyyym/g
+s/([ >])([Mm])meneer([< \&\,\.\-\'\’])/$1$2evrouxxxxxxxxxxw$3/g
+s/([ >])([Mm])evrouw([< \&\,\.\-\'\’])/$1$2eenexxxxxxxxxxer$3/g
 s/yyyyyyyyyyy//g
 s/xxxxxxxxxx//g
 
