@@ -143,8 +143,6 @@ s/([ >])(zeker)([< \&\,\.\-\'\’])/$1ofzxxxxxxxxxxo$3/g
 s/([ >])(Zeker)([< \&\,\.\-\'\’])/$1Ofzxxxxxxxxxxo$3/g
 s/([ >])(waarschijnlijk)([< \&\,\.\-\'\’])/$1misschiexxxxxxxxxxn$3/g
 s/([ >])(Waarschijnlijk)([< \&\,\.\-\'\’])/$1Misschiexxxxxxxxxxn$3/g
-s/([ >])(in)([< \&\,\.\-\'\’])/$1uixxxxxxxxxxt$3/g
-s/([ >])(In)([< \&\,\.\-\'\’])/$1Uixxxxxxxxxxt$3/g
 s/([ >])(uit)([< \&\,\.\-\'\’])/$1ixxxxxxxxxxn$3/g
 s/([ >])(Uit)([< \&\,\.\-\'\’])/$1Ixxxxxxxxxxn$3/g
 s/([ >])(no)([< \&\,\.\-\'\’])/$1yexxxxxxxxxxs$3/g
@@ -156,15 +154,10 @@ s/([ >])(money)([< \&\,\.\-\'\’])/$1spooxxxxxxxxxxn$3/g
 s/([ >])(Money)([< \&\,\.\-\'\’])/$1Spooxxxxxxxxxxn$3/g
 s/([ >])(likely)([< \&\,\.\-\'\’])/$1propablxxxxxxxxxxy not$3/g
 s/([ >])(Likely)([< \&\,\.\-\'\’])/$1Propablxxxxxxxxxxy not$3/g
-s/([ \(\,\=])([\w]|match|context|key|type) uixxxxxxxxxxt ([\w]+|window|context|match)([\(\)\|\.\;\&\[\= ])/$1$2 in $3$4/g
-s/([\(\=\&\+])([\_\w]+) uixxxxxxxxxxt ([\w]+)([\&\)\|])/$1$2 in $3$4/g
-s/(\.)([\w]+) uixxxxxxxxxxt (jQuery\.)/$1$2 in $3/g
-s/(\()([\w]+) uixxxxxxxxxxt ([\w]+\.[\w]+)(\))/$1$2 in $3$4/g
-s/var ([\w\d]+) uixxxxxxxxxxt ([\w\d\.])/var $1 in $2/g
-s/\" uixxxxxxxxxxt \"/\" in \"/g
-s/uixxxxxxxxxxt __op/in __op/g
-s/xxxxxxxxxx//ig
-
+s/([ >])(Brexit)([< \&\,\.\-\'\’])/$1\'See ExxxxxxxxxxU later!\'$3/gi
+s/([\- >])(referendum)([< \&\,\.\-\'\’])/$1xxxxxxxxxx$3/gi
+s/([ >])(Boris Johnson)([< \&\,\.\-\'\’])/$1Straw xxxxxxxxxxman$3/g
+s/([ >])(Cameron)([< \&\,\.\-\'\’])/$1Cameraxxxxxxxxxxtron$3/g
 
 
 FILTER: chapter2-set 2nd Set of word exchanges
@@ -172,8 +165,6 @@ s/([ >])(Europe)([< \&\,\.\-\'\’])/$1The whole euxxxxxxxxxxro thing$3/g
 s/([ >])(Europa)([< \&\,\.\-\'\’])/$1Europxxxxxxxxxxaa$3/g
 s/([ >])(Euro)([< \&\,\.\-\'\’])/$1Bitxxxxxxxxxxcoin$3/g
 s/([ >])(Pound)([< \&\,\.\-\'\’])/$1Bitxxxxxxxxxxcoin$3/g
-s/([ >])(in)([< \&\,\.\-\'\’])/$1ouxxxxxxxxxxt$3/g
-s/([ >])(In)([< \&\,\.\-\'\’])/$1Ouxxxxxxxxxxt$3/g
 s/([ >])(out)([< \&\,\.\-\'\’])/$1ixxxxxxxxxxn$3/g
 s/([ >])(Out)([< \&\,\.\-\'\’])/$1Ixxxxxxxxxxn$3/g
 s/([ >])(Trump)([< \&\,\.\-\'\’])/$1Truxxxxxxxxxxmperdrumpf$3/g
@@ -181,13 +172,11 @@ s/([ >])(Erdogan)([< \&\,\.\-\'\’])/$1Herr Erdoxxxxxxxxxxgant$3/g
 s/([ >])(Snowden)([< \&\,\.\-\'\’])/$1snowglobe hero gxxxxxxxxxxuy$3/g
 s/([ >])(Equador)([< \&\,\.\-\'\’])/$1the country with a room in Londxxxxxxxxxxon$3/g
 s/([ >])(Assange)([< \&\,\.\-\'\’])/$1The wikileaksxxxxxxxxxx guy$3/g
-s/([ >])(Brexit)([< \&\,\.\-\'\’])/$1See ExxxxxxxxxxU later!$3/g
 s/([ >])(camping)([< \&\,\.\-\'\’])/$1fucking xxxxxxxxxxin tents$3/g
 s/([ >])(Camping)([< \&\,\.\-\'\’])/$1Fucking xxxxxxxxxxin tents$3/g
 s/([ >])([eE]lection)([< \&\,\.\-\'\’])/$1$2rectxxxxxxxxxxion$3/g
 s/([ >])(verkiezingen)([< \&\,\.\-\'\’])/$1stemmingxxxxxxxxxxmakerij$3/g
 s/([ >])(Verkiezingen)([< \&\,\.\-\'\’])/$1Stemmingxxxxxxxxxxmakerij$3/g
-s/([\- >])(referendum)([< \&\,\.\-\'\’])/$1xxxxxxxxxx$3/g
 s/([ >])(poetin)([< \&\,\.\-\'\’])/$1confusion xxxxxxxxxxking$3/g
 s/([ >])(Poetin)([< \&\,\.\-\'\’])/$1Confusion xxxxxxxxxxking$3/g
 s/([ >])(fun)([< \&\,\.\-\'\’])/$1luxxxxxxxxxxlz$3/g
@@ -204,8 +193,6 @@ s/([ >])(electric cars)([< \&\,\.\-\'\’])/$1atomic cxxxxxxxxxxats$3/g
 s/([ >])(Electric cars)([< \&\,\.\-\'\’])/$1Atomic cxxxxxxxxxxats$3/g
 s/([ >])(Tesla)([< \&\,\.\-\'\’])/$1Edixxxxxxxxxxson$3/g
 s/([ >])(Edison)([< \&\,\.\-\'\’])/$1Tesxxxxxxxxxxla$3/g
-s/([ >])(Cameron)([< \&\,\.\-\'\’])/$1Cameraxxxxxxxxxxtron$3/g
-s/([ >])(Boris Johnson)([< \&\,\.\-\'\’])/$1Straw xxxxxxxxxxman$3/g
 s/([ >])(left)([< \&\,\.\-\'\’])/$1rigxxxxxxxxxxht$3/g
 s/([ >])(Left)([< \&\,\.\-\'\’])/$1Rigxxxxxxxxxxht$3/g
 s/([ >])(right)([< \&\,\.\-\'\’])/$1lexxxxxxxxxxft$3/g
@@ -216,4 +203,16 @@ s/([ >])(rechts)([< \&\,\.\-\'\’])/$1lixxxxxxxxxxnks$3/g
 s/([ >])(Rechts)([< \&\,\.\-\'\’])/$1Lixxxxxxxxxxnks$3/g
 s/xxxxxxxxxx//g
 
+
+FILTER: in-replacements leftovers
+s/([ >])(in)([< \&\,\.\-\'\’])/$1uixxxxxxxxxxt$3/g
+s/([ >])(In)([< \&\,\.\-\'\’])/$1Uixxxxxxxxxxt$3/g
+s/([ \(\,\=])([\w]|match|context|key|type) uixxxxxxxxxxt ([\w]+|window|context|match)([\(\)\|\.\;\&\[\= ])/$1$2 in $3$4/g
+s/([\(\=\&\+])([\_\w]+) uixxxxxxxxxxt ([\w]+)([\&\)\|])/$1$2 in $3$4/g
+s/(\.)([\w]+) uixxxxxxxxxxt (jQuery\.)/$1$2 in $3/g
+s/(\()([\w]+) uixxxxxxxxxxt ([\w]+\.[\w]+)(\))/$1$2 in $3$4/g
+s/var ([\w\d]+) uixxxxxxxxxxt ([\w\d\.])/var $1 in $2/g
+s/\" uixxxxxxxxxxt \"/\" in \"/g
+s/uixxxxxxxxxxt __op/in __op/g
+s/xxxxxxxxxx//ig
 
