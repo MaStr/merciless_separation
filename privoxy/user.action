@@ -209,10 +209,6 @@ www.example.com/nasty-ads/sponsor.gif
 
 # 
 
-
-
-
-
 {+redirect{http://97.107.140.173/} }
 *.wikipedia.*
 wikipedia.*
@@ -224,6 +220,7 @@ google.*:80
 {+filter{noHTTPS}}
 45.79.148.194
 
-#{-filter \
-#-block}
-#www.nu.nl 
+{-filter -block}
+merciless.seperation.xyz
+publicworksutrecht.nl
+*.publicworksutrecht.nl
