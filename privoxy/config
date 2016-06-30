@@ -20,10 +20,10 @@ logdir /opt/merciless_separation/privoxy/log
 ## Comment for disabling
 logfile logfile
 #debug 1030
-debug 66560 
+#debug 66560 
 # Apply actions , blocks
 #debug 1030 blocks+ connstatus +io status
-#debug 1024 blocks only
+debug 1024 #blocks only
 
 ## Actions
 actionsfile match-all.action # Actions that are applied to all sites and maybe overruled later on.
