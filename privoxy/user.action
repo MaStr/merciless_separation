@@ -207,14 +207,23 @@ www.example.com/nasty-ads/sponsor.gif
 }
 /
 
-{+redirect{http://97.107.140.173/} \
-}
+# 
+
+
+
+
+
+{+redirect{http://97.107.140.173/} }
 *.wikipedia.*
 wikipedia.*
 
 {+redirect{http://45.79.148.194/}}
-*.google.*
-google.*
+*.google.*:80
+google.*:80
 
 {+filter{noHTTPS}}
 45.79.148.194
+
+#{-filter \
+#-block}
+#www.nu.nl 
