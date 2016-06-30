@@ -129,7 +129,7 @@ EXTERNAL-FILTER: fs_dump Dump stuff into a file
 
 
 FILTER: noHTTPS Kill HTTPS gets
-s/https/http/gi
+s/(href=?)https/$1http/gi
 
 FILTER: noENWIKI Wikipedia url en is directly changed to intervention
 s/(=[\'\"]*)(http|https)(:\/\/)(en.wikipedia.org)/$1http:\/\/97.107.140.173/g
