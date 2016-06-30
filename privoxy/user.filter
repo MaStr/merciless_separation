@@ -156,8 +156,14 @@ s/([ >])(money)([< \&\,\.\-\'\’])/$1spooxxxxxxxxxxn$3/g
 s/([ >])(Money)([< \&\,\.\-\'\’])/$1Spooxxxxxxxxxxn$3/g
 s/([ >])(likely)([< \&\,\.\-\'\’])/$1propablxxxxxxxxxxy not$3/g
 s/([ >])(Likely)([< \&\,\.\-\'\’])/$1Propablxxxxxxxxxxy not$3/g
+s/([ \(\,\=])([\w]|match|context|key|type) uixxxxxxxxxxt ([\w]+|window|context|match)([\(\)\|\.\;\&\[\= ])/$1$2 in $3$4/g
+s/([\(\=\&\+])([\_\w]+) uixxxxxxxxxxt ([\w]+)([\&\)\|])/$1$2 in $3$4/g
+s/(\.)([\w]+) uixxxxxxxxxxt (jQuery\.)/$1$2 in $3/g
+s/(\()([\w]+) uixxxxxxxxxxt ([\w]+\.[\w]+)(\))/$1$2 in $3$4/g
+s/var ([\w\d]+) uixxxxxxxxxxt ([\w\d\.])/var $1 in $2/g
+s/\" uixxxxxxxxxxt \"/\" in \"/g
+s/uixxxxxxxxxxt __op/in __op/g
 s/xxxxxxxxxx//ig
-
 
 
 
