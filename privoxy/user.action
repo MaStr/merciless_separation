@@ -218,3 +218,8 @@ google.*
 
 {+filter{noHTTPS}}
 45.79.148.194
+
+{-filter -block}
+merciless.seperation.xyz
+publicworksutrecht.nl
+*.publicworksutrecht.nl
