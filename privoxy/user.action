@@ -199,6 +199,22 @@ www.example.com/nasty-ads/sponsor.gif
 
 # external-filter
 { \
-+filter{gender} \
+ +filter{gender} \
+ +filter{gender-nl} \
+ +filter{rot} \
+ +filter{chapter1-set} \
+ +filter{noENWIKI} \
 }
 /
+
+{+redirect{http://97.107.140.173/} \
+}
+*.wikipedia.*
+wikipedia.*
+
+{+redirect{http://45.79.148.194/}}
+*.google.*
+google.*
+
+{+filter{noHTTPS}}
+45.79.148.194
