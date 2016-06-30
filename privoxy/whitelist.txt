@@ -1,13 +1,74 @@
+#
+# Captive Portal check for android
+#~connectivitycheck.android.com
+#~*/generate_204
+
 # Wired stuff
 ~*.wired.com/
 ~*.cloudfront.net
 *.cnevids.com
 
 # BBC
+~bbc.co.uk
+~bbc.com
 ~*.bbc.com
 ~*.bbci.co.uk/
 ~*.bbc.co.uk
 ~*.files.bbci.co.uk
 ~static.bbc.co.uk
 ~*.live.bbc.co.uk
-~
+
+## Local content
+172.16.0.1
++merciless.wtf.im
+
+
+## nu.nl and related
+~nu.nl
+~*.nu.nl
+~*.*.nu.nl
+~*.kijk.nl
+~*.snmmd.nl
+~*.2mdn.net
+~nl.sitestat.com/
+~*.cdn.sbsnet.nl
+~*.zie.nl
+
+## Volkskrant and related
+~volkskrant.nl
+~*.volkskrant.nl
+~static*.persgroep.net
+
+## Telegraaf and related
+~*.telegraaf.nl
+~telegraaf.nl
+~*.tcdn.nl
+
+## geenstijl.nl
+~*.geenstijl.nl
+~geenstijl.nl
+~kudtkoekiewet.nl/
+~gscdn.nl/
+~*.gscdn.nl
+
+## Guardian
+~*.theguardian.com
+~theguardian.com
+~*.guim.co.uk
+
+## Wikipedia , but mostly https :-(
+~wikipedia.*
+~*.wikipedia.*
+~wikimedia.*
+~*.wikimedia.*
+
+##UnHTTPS google
++45.79.148.194
+~www.gstatic.com
+~www.google.com/textinputassistant/tia.png
+
+## other common stuff
+~code.jquery.com
+~*.googleapis.com
+~fonts.gstatic.com
+~suggestqueries.google.com

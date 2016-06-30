@@ -36,8 +36,8 @@ filterfile default.filter
 filterfile user.filter      # User customizations
 
 ## Whitelist
-trustfile whitelist.txt
-enforce-blocks 1
+#trustfile whitelist.txt
+#enforce-blocks 1
 
 ## Server Runtime Options
 listen-address 0.0.0.0:8118

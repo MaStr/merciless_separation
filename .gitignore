@@ -1,2 +1,4 @@
 *.secret
 privoxy/log/logfile
+privoxy/config.local
+lighttpd/lighttpd.conf.local
