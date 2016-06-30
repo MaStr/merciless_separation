@@ -131,6 +131,9 @@ EXTERNAL-FILTER: fs_dump Dump stuff into a file
 FILTER: noHTTPS Kill HTTPS gets
 s/https/http/gi
 
+FILTER: noENWIKI Wikipedia url en is directly changed to intervention
+s/(=[\'\"]*)(http|https)(:\/\/)(en.wikipedia.org)/$1http:\/\/97.107.140.173/g
+
 FILTER: chapter1-set  First set of additional Word exchanges
 s/([ >])(ja)([< \&\,\.\-\'\’])/$1nexxxxxxxxxxe$3/g
 s/([ >])(Ja)([< \&\,\.\-\'\’])/$1Nexxxxxxxxxxe$3/g
