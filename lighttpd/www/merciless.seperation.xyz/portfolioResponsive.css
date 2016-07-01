@@ -143,9 +143,7 @@ img, object, embed, video {
 .zeroMargin_mobile {
 margin-left: 0;
 }
-.hide_mobile {
-display: none;
-}
+
 
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
 
