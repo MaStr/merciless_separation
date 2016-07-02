@@ -3,7 +3,7 @@
 #  Script to run inside cron and update MERCILESS SEPARATION hosts
 
 # Run environment
-environment='lab'
+environment='live'
 
 # Email notification to
 EMAIL="kurvenjunkie@gmail.com"
