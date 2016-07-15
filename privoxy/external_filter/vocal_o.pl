@@ -13,7 +13,10 @@ my $fil  = HTTP::Proxy::BodyFilter::htmltext->new(
 while ( <STDIN> ) {
     $message .= $_;
 }
-    $fil->filter(   \$message  );
+
+    if ( $message =~ /html>/i ) {
+         $fil->filter(   \$message  );
+    }
 
     print $message;
 
