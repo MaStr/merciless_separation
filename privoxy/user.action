@@ -201,15 +201,29 @@ www.example.com/nasty-ads/sponsor.gif
 { \
  +filter{gender} \
  +filter{gender-nl} \
- +filter{rot} \
+ +filter{rotImage180} \
  +filter{chapter1-set} \
  +filter{noENWIKI} \
 }
 /
 
-# 
+## Rotate complete page
+#{ \
+#+filter{rotpage180} \
+#}
+#/
 
-{+redirect{http://97.107.140.173/} }
+## Send complete HTML Traffic to perl-proxy
+#{ +forward-override{forward 127.0.0.1:13128}  }
+#/ 
+# (cont.) Exclude a few things
+#{ -forward-override  }
+#/statusbar\.js 
+#/.*\.(js|css|svg)($|\?)
+#/.*\.(gif|jpe?g|png|bmp|ico)($|\?)
+
+{+redirect{http://97.107.140.173/} \
+}
 *.wikipedia.*
 wikipedia.*
 
