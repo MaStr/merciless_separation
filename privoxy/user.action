@@ -197,30 +197,36 @@ www.example.com/nasty-ads/sponsor.gif
 #www.facebook.com/(extern|plugins)/(login_status|like(box)?|activity|fan)\.php
 
 
-# external-filter
+# Set 1
 { \
  +filter{gender} \
  +filter{gender-nl} \
  +filter{rotImage180} \
  +filter{chapter1-set} \
- +filter{noENWIKI} \
+}
+# disalbed /
+
+# Rotate complete page
+{ \
++filter{rotpage180} \
 }
 /
 
-## Rotate complete page
-#{ \
-#+filter{rotpage180} \
-#}
-#/
-
-## Send complete HTML Traffic to perl-proxy
-#{ +forward-override{forward 127.0.0.1:13128}  }
-#/ 
+# Send complete HTML Traffic to perl-proxy
+{ +forward-override{forward 127.0.0.1:13128}  }
+/ 
 # (cont.) Exclude a few things
-#{ -forward-override  }
-#/statusbar\.js 
-#/.*\.(js|css|svg)($|\?)
-#/.*\.(gif|jpe?g|png|bmp|ico)($|\?)
+{ -forward-override  }
+/statusbar\.js 
+/.*\.(js|css|svg)($|\?)
+/.*\.(gif|jpe?g|png|bmp|ico)($|\?)
+
+
+
+
+##### VVVVVVV Static Stuff - Don't Change VVVVVVVVVVV v#######
+{ +filter{noENWIKI} }
+/
 
 {+redirect{http://97.107.140.173/} \
 }
