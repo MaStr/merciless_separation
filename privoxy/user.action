@@ -203,7 +203,6 @@ www.example.com/nasty-ads/sponsor.gif
  +filter{gender-nl} \
  +filter{rotImage180} \
  +filter{chapter1-set} \
- +filter{noENWIKI} \
 }
 /
 
@@ -233,6 +232,12 @@ www.example.com/nasty-ads/sponsor.gif
 
 #{ +filter{autoScroll} }
 #/
+
+
+
+#### VVVVVVVVVVV  Default filters don't change VVVVVVVVVVVVVVVVVVVvv
+{ +filter{noENWIKI} }
+/
 
 {+redirect{http://97.107.140.173/} \
 }
