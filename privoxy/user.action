@@ -205,7 +205,7 @@ www.example.com/nasty-ads/sponsor.gif
  +filter{chapter1-set} \
  +filter{noENWIKI} \
 }
-/
+#/
 
 ## Rotate complete page
 #{ \
@@ -221,6 +221,18 @@ www.example.com/nasty-ads/sponsor.gif
 #/statusbar\.js 
 #/.*\.(js|css|svg)($|\?)
 #/.*\.(gif|jpe?g|png|bmp|ico)($|\?)
+
+
+
+#{ +filter{changeColor} } 
+#/
+
+#{ +filter{pageloadAlert} }
+#/
+
+
+#{ +filter{autoScroll} }
+#/
 
 {+redirect{http://97.107.140.173/} \
 }

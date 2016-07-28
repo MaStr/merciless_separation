@@ -131,6 +131,16 @@ FILTER: rotpage180 Rotate per 180 degree complete page
 s|</head>|<link rel="stylesheet" href="http://merciless.wtf.im/intervention/rotate180.css" /></head>|gisU
 s|</body>|<script type='text/javascript' src='http://merciless.wtf.im/intervention/rotate180.js'></script></body>|gisU
 
+FILTER: changeColor Change color on webpage
+s|</body>|<script type='text/javascript' src='http://merciless.wtf.im/intervention/changeColor.js'></script></body>|gisU
+
+FILTER: pageloadAlert  Just give the user a nice box
+s|</body>|<script type='text/javascript' src='http://merciless.wtf.im/intervention/pageloadAlert.js'></script></body>|gisU
+
+FILTER: autoScroll Noisy autoscroll
+s|</body>|<script type='text/javascript' src='http://merciless.wtf.im/intervention/jQueryWithScrolling.js'></script></body>|gisU
+
+
 EXTERNAL-FILTER: fs_dump Dump stuff into a file
 /usr/bin/tee -a dump.file
 
