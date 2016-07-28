@@ -204,22 +204,22 @@ www.example.com/nasty-ads/sponsor.gif
  +filter{rotImage180} \
  +filter{chapter1-set} \
 }
-/
-
-## Rotate complete page
-#{ \
-#+filter{rotpage180} \
-#}
 #/
 
+## Rotate complete page
+{ \
++filter{rotpage90} \
+}
+/
+
 ## Send complete HTML Traffic to perl-proxy
-#{ +forward-override{forward 127.0.0.1:13128}  }
-#/ 
+{ +forward-override{forward 127.0.0.1:13128}  }
+/ 
 # (cont.) Exclude a few things
-#{ -forward-override  }
-#/statusbar\.js 
-#/.*\.(js|css|svg)($|\?)
-#/.*\.(gif|jpe?g|png|bmp|ico)($|\?)
+{ -forward-override  }
+/statusbar\.js 
+/.*\.(js|css|svg)($|\?)
+/.*\.(gif|jpe?g|png|bmp|ico)($|\?)
 
 
 
