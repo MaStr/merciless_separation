@@ -1,0 +1,7 @@
+check process perl-proxy with pidfile /var/run/perl-proxy.pid
+	  start program  "/opt/merciless_separation/bin/start-proxy.sh"
+	  stop program   "/opt/merciless_separation/bin/stop-proxy.sh"
+	  if 5 restarts within 5 cycles then alert
+
+	  if failed host 127.0.0.1 port 13128 type tcp then restart	
+
