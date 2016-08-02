@@ -20,7 +20,7 @@
 
 ## Local content
 172.16.0.1
-+merciless.wtf.im
++merciless.us.to
 
 
 ## nu.nl and related
