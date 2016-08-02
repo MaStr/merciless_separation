@@ -124,12 +124,22 @@ FILTER: rotImage180 rotate image by 180
 s|</head>|<style>img{transform: rotate(180deg);}</style></head>|gisU
 
 FILTER: rotpage90 Rotate per 90 degree complete page
-s|</head>|<link rel="stylesheet" href="http://merciless.wtf.im/intervention/rotate90.css" /></head>|gisU
-s|</body>|<script type='text/javascript' src='http://merciless.wtf.im/intervention/rotate90.js'></script></body>|gisU
+s|</head>|<link rel="stylesheet" href="http://merciless.us.to/intervention/rotate90.css" /></head>|gisU
+s|</body>|<script type='text/javascript' src='http://merciless.us.to/intervention/rotate90.js'></script></body>|gisU
 
 FILTER: rotpage180 Rotate per 180 degree complete page
-s|</head>|<link rel="stylesheet" href="http://merciless.wtf.im/intervention/rotate180.css" /></head>|gisU
-s|</body>|<script type='text/javascript' src='http://merciless.wtf.im/intervention/rotate180.js'></script></body>|gisU
+s|</head>|<link rel="stylesheet" href="http://merciless.us.to/intervention/rotate180.css" /></head>|gisU
+s|</body>|<script type='text/javascript' src='http://merciless.us.to/intervention/rotate180.js'></script></body>|gisU
+
+FILTER: changeColor Change color on webpage
+s|</body>|<script type='text/javascript' src='http://merciless.us.to/intervention/changeColor.js'></script></body>|gisU
+
+FILTER: pageloadAlert  Just give the user a nice box
+s|</body>|<script type='text/javascript' src='http://merciless.us.to/intervention/pageloadAlert.js'></script></body>|gisU
+
+FILTER: autoScroll Noisy autoscroll
+s|</body>|<script type='text/javascript' src='http://merciless.us.to/intervention/jQueryWithScrolling.js'></script></body>|gisU
+
 
 EXTERNAL-FILTER: fs_dump Dump stuff into a file
 /usr/bin/tee -a dump.file

@@ -204,7 +204,7 @@ www.example.com/nasty-ads/sponsor.gif
  +filter{rotImage180} \
  +filter{chapter1-set} \
 }
-# disalbed /
+#/
 
 # Rotate complete page
 { \
@@ -227,6 +227,18 @@ www.example.com/nasty-ads/sponsor.gif
 ##### VVVVVVV Static Stuff - Don't Change VVVVVVVVVVV v#######
 { +filter{noENWIKI} }
 /
+
+
+
+#{ +filter{changeColor} } 
+#/
+
+#{ +filter{pageloadAlert} }
+#/
+
+
+#{ +filter{autoScroll} }
+#/
 
 {+redirect{http://97.107.140.173/} \
 }
