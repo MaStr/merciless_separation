@@ -208,7 +208,7 @@ www.example.com/nasty-ads/sponsor.gif
 
 # Rotate complete page
 { \
-+filter{rotpage90} \
++filter{rotpage180} \
 }
 /
 
