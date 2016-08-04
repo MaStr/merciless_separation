@@ -35,6 +35,19 @@ sub push_filter_vocals(){
 		) 	
     );
 }
+sub push_filter_vocalsReCapitalize(){
+    use HTTP::Proxy::BodyFilter::tags;
+    use HTTP::Proxy::BodyFilter::htmltext; 
+   
+    use myhtmltext; 
+    $proxy->push_filter(
+		mime     => 'text/html',
+		response => HTTP::Proxy::BodyFilter::tags->new,
+		response => myhtmltext->new(
+			sub { tr/aeiouAEIOUbcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ/UUUUUoooooBCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz/ }
+		) 	
+    );
+}
 
 
 
