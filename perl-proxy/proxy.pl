@@ -73,7 +73,7 @@ sub push_filter_vocalsDeCapitalize(){
     $proxy->max_connections( $max_connections );
 
 
-    push_filter_vocalsReCapitalize();
+    push_filter_vocalsDeCapitalize();
 
     # this is a MainLoop-like method
     $proxy->start;
