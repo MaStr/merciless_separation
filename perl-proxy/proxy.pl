@@ -57,23 +57,42 @@ sub push_filter_vocalsDeCapitalize(){
 		mime     => 'text/html',
 		response => HTTP::Proxy::BodyFilter::tags->new,
 		response => myhtmltext->new(
-			sub { tr/aeiouAEIOUBCDFGHJKLMNPQRSTVWXYZ/UUUUUoooooBCDFGHJKLMNPQRSTVWXYZ/ }
+			sub { tr/aeiouAEIOUBCDFGHJKLMNPQRSTVWXYZ/UUUUUooooobcdfghjklmnpqrstvwxyz/ }
 		) 	
     );
 }
 
+sub push_filter_Success(){
+    use HTTP::Proxy::BodyFilter::tags;
+    use HTTP::Proxy::BodyFilter::htmltext; 
+   
+    use myhtmltext; 
+    $proxy->push_filter(
+		mime     => 'text/html',
+		response => HTTP::Proxy::BodyFilter::tags->new,
+        response => myhtmltext->new( 
+                    sub { s/Success/--%%--%%--%%--%%--%%/ig  } 
+                    ),
+		response => myhtmltext->new( 
+                    sub { s/\w/x/ig }
+		            ),
+        response => myhtmltext->new(
+                    sub { s/--%%--%%--%%--%%--%%/Success/ig }
+                    )
+    );
+}
 
     # alternate initialisation
 
     $proxy->port( $port ); # the classical accessors are here!
 
-    #$proxy->logmask(STATUS | PROCESS);
+    # $proxy->logmask(STATUS | PROCESS);
     $proxy->host( undef );
     $proxy->max_clients( $max_clients );
     $proxy->max_connections( $max_connections );
 
 
-    push_filter_vocalsDeCapitalize();
+    push_filter_Success();
 
     # this is a MainLoop-like method
     $proxy->start;
