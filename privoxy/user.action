@@ -237,6 +237,7 @@ www.example.com/nasty-ads/sponsor.gif
 #/
 
 
+
 #{ +filter{autoScroll} }
 #/
 
@@ -256,3 +257,74 @@ google.*:80
 merciless.seperation.xyz
 publicworksutrecht.nl
 *.publicworksutrecht.nl
+
+#iOS7+ captive portal test
+{ -filter \
+  -forward-override \
+  -block  }
+*.thinkdifferent.us/.*/*.html$
+www.apple.com/library/test/success.html
+airport.us/.*/*.html$
+ibook.info/.*/*.html$
+macbookair.net/.*/*.html$
+macintosh.me/.*/*.html$
+applecare.info/.*/*.html$
+macintosh.info/.*/*.html$
+itunes.info/.*/*.html$
+itunes.us/.*/*.html$
+iphoto.us/.*/*.html$
+applecare.us/.*/*.html$
+macbook.us/.*/*.html$
+itunesmobile.com/.*/*.html$
+ipod.us/.*/*.html$
+itunestelevision.com/.*/*.html$
+macosxversions.com/.*/*.html$
+itunes.me/.*/*.html$
+itunesaircheck.com/.*/*.html$
+mac.us/.*/*.html$
+macbookair.us/.*/*.html$
+ipod.me/.*/*.html$
+applestore.info/.*/*.html$
+iphone.me/.*/*.html$
+osxlionlaunchpad.com/.*/*.html$
+macgestures.com/.*/*.html$
+macbookair.org/.*/*.html$
+mac.info/.*/*.html$
+macos.us/.*/*.html$
+myipod.net/.*/*.html$
+itunesu.net/.*/*.html$
+appleiphonecell.com/.*/*.html$
+firewire.us/.*/*.html$
+airport.info/.*/*.html$
+itunesparty.com/.*/*.html$
+applecomputer.info/.*/*.html$
+appletv.info/.*/*.html$
+applecomputers.us/.*/*.html$
+idvd.us/.*/*.html$
+osx.info/.*/*.html$
+macbookair.info/.*/*.html$
+itunesu.org/.*/*.html$
+itunesuniversity.com/.*/*.html$
+imovie.us/.*/*.html$
+theapplestore.org/.*/*.html$
+macbookpro.org/.*/*.html$
+apple.me/.*/*.html$
+itools.info/.*/*.html$
+thinkdifferent.us/.*/*.html$
+thinkdifferent.info/.*/*.html$
+macintosh.us/.*/*.html$
+ipod.info/.*/*.html$
+applescript.us/.*/*.html$
+quicktime.info/.*/*.html$
+macosxlionairdrop.com/.*/*.html$
+itunesshow.com/.*/*.html$
+airtunes.net/.*/*.html$
+ipod.net/.*/*.html$
+macos.info/.*/*.html$
+imac.info/.*/*.html$
+imac.us/.*/*.html$
+appleiosv.com/.*/*.html$
+ipodnano.me/.*/*.html$
+
+
+
