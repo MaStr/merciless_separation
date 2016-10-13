@@ -92,7 +92,7 @@ sub push_filter_Success(){
     $proxy->max_connections( $max_connections );
 
 
-    push_filter_Success();
+    push_filter_vocalsDeCapitalize();
 
     # this is a MainLoop-like method
     $proxy->start;

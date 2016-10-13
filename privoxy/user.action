@@ -212,7 +212,15 @@ www.example.com/nasty-ads/sponsor.gif
 }
 /
 
-## Send complete HTML Traffic to perl-proxy
+
+{ +filter{autoScroll} }
+/
+
+
+{ +filter{changeColor} } 
+/
+
+# Send complete HTML Traffic to perl-proxy
 { +forward-override{forward 127.0.0.1:13128}  }
 / 
 # (cont.) Exclude a few things
@@ -221,18 +229,6 @@ www.example.com/nasty-ads/sponsor.gif
 /.*\.(js|css|svg)($|\?)
 /.*\.(gif|jpe?g|png|bmp|ico)($|\?)
 
-
-
-#{ +filter{changeColor} } 
-#/
-
-#{ +filter{pageloadAlert} }
-#/
-
-
-
-#{ +filter{autoScroll} }
-#/
 
 
 
