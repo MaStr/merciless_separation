@@ -212,6 +212,14 @@ www.example.com/nasty-ads/sponsor.gif
 }
 /
 
+
+{ +filter{autoScroll} }
+/
+
+
+{ +filter{changeColor} } 
+/
+
 # Send complete HTML Traffic to perl-proxy
 { +forward-override{forward 127.0.0.1:13128}  }
 / 
@@ -230,16 +238,14 @@ www.example.com/nasty-ads/sponsor.gif
 
 
 
-#{ +filter{changeColor} } 
-#/
+
 
 #{ +filter{pageloadAlert} }
 #/
 
 
 
-#{ +filter{autoScroll} }
-#/
+
 
 {+redirect{http://97.107.140.173/} \
 }
