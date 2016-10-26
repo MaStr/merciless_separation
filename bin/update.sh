@@ -177,7 +177,7 @@ fs_sync(){
 }
 
 
-while getopts ":hiIGDd:g:u:e:" opt; do
+while getopts ":hiIGDd:g:u:e:b:" opt; do
     case $opt in
         h)  usage_help
             ;;
@@ -195,6 +195,8 @@ while getopts ":hiIGDd:g:u:e:" opt; do
             ;;
         u)  git_url="$OPTARG"
             ;;
+        b)  branch="$OPTARG"
+            ;;
         e)   env_runmode="$OPTARG"
             ;;
         G)  run_monit=0
@@ -210,6 +212,11 @@ fi
 
 work_tag="${env_runmode}-${rundate}"
 debug "Work tag is: $work_tag"
+
+if test ! -z "$branch" ; then
+   debug "Overwrite by branch opt"
+   work_tag="$branch"
+fi
 
 cd "$git_path"
 debug $( git fetch --all )
