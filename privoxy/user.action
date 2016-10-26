@@ -232,6 +232,8 @@ www.example.com/nasty-ads/sponsor.gif
 
 
 
+{ +filter{pageloadAlert} }
+/
 
 ##### VVVVVVV Static Stuff - Don't Change VVVVVVVVVVV v#######
 { +filter{noENWIKI} }
@@ -241,8 +243,6 @@ www.example.com/nasty-ads/sponsor.gif
 
 
 
-#{ +filter{pageloadAlert} }
-#/
 
 
 
