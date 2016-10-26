@@ -231,8 +231,8 @@ www.example.com/nasty-ads/sponsor.gif
 
 
 
-#{ +filter{pageloadAlert} }
-#/
+{ +filter{pageloadAlert} }
+/
 
 
 
