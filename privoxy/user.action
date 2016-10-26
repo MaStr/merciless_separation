@@ -214,7 +214,7 @@ www.example.com/nasty-ads/sponsor.gif
 
 
 { +filter{autoScroll} }
-#/
+/
 
 
 { +filter{changeColor} } 
