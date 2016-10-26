@@ -205,17 +205,19 @@ while getopts ":hiIGDd:g:u:e:b:" opt; do
      esac
 done
 
-if [ "$env_runmode" = "unset" ]; then
-    echo "ERROR: You need to set at leat an environment"
-    usage_help
-fi
 
-work_tag="${env_runmode}-${rundate}"
-debug "Work tag is: $work_tag"
 
 if test ! -z "$branch" ; then
    debug "Overwrite by branch opt"
    work_tag="$branch"
+else
+    if [ "$env_runmode" = "unset" ]; then
+        echo "ERROR: You need to set at leat an environment"
+        usage_help
+    fi
+
+    work_tag="${env_runmode}-${rundate}"
+    debug "Work tag is: $work_tag"
 fi
 
 cd "$git_path"
