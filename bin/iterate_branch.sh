@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 repository="$1"
 branch_list="$2"
