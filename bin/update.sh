@@ -177,7 +177,7 @@ fs_sync(){
 }
 
 
-while getopts ":hiIGDd:g:u:e:" opt; do
+while getopts ":hiIGDd:g:u:e:b:" opt; do
     case $opt in
         h)  usage_help
             ;;
@@ -195,6 +195,8 @@ while getopts ":hiIGDd:g:u:e:" opt; do
             ;;
         u)  git_url="$OPTARG"
             ;;
+        b)  branch="$OPTARG"
+            ;;
         e)   env_runmode="$OPTARG"
             ;;
         G)  run_monit=0
@@ -203,23 +205,32 @@ while getopts ":hiIGDd:g:u:e:" opt; do
      esac
 done
 
-if [ "$env_runmode" = "unset" ]; then
-    echo "ERROR: You need to set at leat an environment"
-    usage_help
-fi
 
-work_tag="${env_runmode}-${rundate}"
-debug "Work tag is: $work_tag"
+
+if test ! -z "$branch" ; then
+   debug "Overwrite by branch opt"
+   work_tag="$branch"
+else
+    if [ "$env_runmode" = "unset" ]; then
+        echo "ERROR: You need to set at leat an environment"
+        usage_help
+    fi
+
+    work_tag="${env_runmode}-${rundate}"
+    debug "Work tag is: $work_tag"
+fi
 
 cd "$git_path"
 debug $( git fetch --all )
 
-if git tag | grep -q -e "${work_tag}" ; then
-    echo "${work_tag} found in repository"
+if test  -z "$branch" ; then
+    if git tag | grep -q -e "${work_tag}" ; then
+        echo "${work_tag} found in repository"
 
-else
-    debug "Nothing to do for today"
-    exit 1
+    else
+        debug "Nothing to do for today"
+        exit 1
+    fi
 fi
 
 if [ $run_monit -eq 1 ] ; then
@@ -228,9 +239,16 @@ if [ $run_monit -eq 1 ] ; then
     done
 fi
 
-git checkout -f ${env_runmode} 2>&1 
-git pull 2>&1
-git checkout "${work_tag}" 2>&1
+if test  -z "$branch" ; then
+    git checkout -f ${env_runmode} 2>&1 
+    git pull 2>&1
+    git checkout "${work_tag}" 2>&1
+else
+    # Run in branch mode
+    git checkout -f HEAD 2>&1
+    git checkout "${work_tag}" 2>&1
+    git pull 2>&1
+fi
 
 fs_sync
 
