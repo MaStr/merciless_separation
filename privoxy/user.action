@@ -204,7 +204,7 @@ www.example.com/nasty-ads/sponsor.gif
  +filter{rotImage180} \
  +filter{chapter1-set} \
 }
-#/
+/
 
 ## Rotate complete page
 { \
