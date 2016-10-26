@@ -213,8 +213,8 @@ www.example.com/nasty-ads/sponsor.gif
 #/
 
 
-#{ +filter{autoScroll} }
-#/
+{ +filter{autoScroll} }
+/
 
 
 #{ +filter{changeColor} } 
