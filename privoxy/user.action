@@ -206,6 +206,9 @@ www.example.com/nasty-ads/sponsor.gif
 }
 #/
 
+{+filter{chapter2-set} }
+/
+
 # Rotate complete page
 { \
 +filter{rotpage180} \
